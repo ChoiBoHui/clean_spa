@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-const Sub02 = () => {
+const Sub02 = ({ content }) => {
     return (
-        <div className="Sub02">
-            Sub02
+        <div>
+            {content[0].des}
         </div>
     )
 }
 
-export default Sub02;
+export default Sub02
