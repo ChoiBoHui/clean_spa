@@ -1,16 +1,16 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom'
 
 const Detail = ({ user }) => {
     const { id } = useParams();
-    const muser = user?.find(i => i.id === Number(id))
+    const muser = user.find(i => Number(id) == i.id)
     return (
         <>
             {
-                !user
-                    ? <>ddd</>
-                    : <div>
-                        <img src={muser?.avatar_url} alt="" />
+                !muser ? <div>LOADING ...</div>
+                    :
+                    <div>
+                        <img src={muser.image_link} alt="" />
                     </div>
             }
         </>
